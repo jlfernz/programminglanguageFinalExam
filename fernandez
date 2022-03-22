@@ -1,0 +1,345 @@
+Before we start with the actual codes and a machine problem, let us discuss first these function that are very useful in list implementation.
+
+1. append()
+The append() method is used to add elements at the end of the list. This method can only add a single element at a time. To add multiple elements, the append() method can be used inside a loop.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def appendFunc(): 
+  myList.append(4)
+  myList.append(5)
+  myList.append(6)
+  for i in range(7, 9):
+    myList.append(i)
+  print(myList)
+  
+appendFunc()
+
+Output: 
+[1, 2, 3, 'Roxie', 'programming languages', 4, 5, 6, 7, 8]
+
+
+2. extend()
+The extend() method is used to add more than one element at the end of the list. Although it can add more than one element, unlike append(), it adds them at the end of the list like append().
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def extendFunc():  
+  myList.extend([4, 5, 6])
+  for i in range(7, 9):
+    myList.append(i)
+  print(myList)
+
+extendFunc()
+
+Output:
+[1, 2, 3, 'Roxie', 'programming languages', 4, 5, 6, 7, 8]
+
+
+3. insert()
+The insert() method can add an element at a given position in the list. Thus, unlike append(), it can add elements at any position, but like append(), it can add only one element at a time. This method takes two arguments. The first argument specifies the position, and the second argument specifies the element to be inserted.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def insertFunc(): 
+  myList.insert(3, 4)
+  myList.insert(4, 5)
+  myList.insert(5, 6)
+  print(myList)
+
+insertFunc()
+
+Output:
+[1, 2, 3, 4, 5, 6, 'Roxie', 'programming languages']
+
+
+4. remove()
+The remove() method is used to remove an element from the list. In the case of multiple occurrences of the same element, only the first occurrence is removed.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def removeFunc():
+  myList.remove('programming languages')
+  myList.insert(4, 'Let us')
+  myList.insert(5, 'keep on')
+  myList.insert(6, 'going')
+  print(myList)
+
+removeFunc()
+
+Output:
+[1, 2, 3, 'Roxie', 'Let us', 'keep on', 'going']
+
+
+5. pop()
+The method pop() can remove an element from any position in the list. The parameter supplied to this method is the index of the element to be removed.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def popFunc():
+  myList.pop(4)
+  myList.insert(4, 'let us')
+  myList.insert(5, 'keep on')
+  myList.insert(6, 'going')
+  print(myList)
+
+popFunc()
+
+Output:
+[1, 2, 3, 'Roxie', 'let us', 'keep on', 'going']
+
+
+6. slice
+The slice operation is used to print a section of the list. The slice operation returns a specific range of elements. It does not modify the original list.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def sliceFunc():
+  print(myList[:4])  # prints from beginning to end index
+  print(myList[2:])  # prints from start index to end of list
+  print(myList[2:4]) # prints from start index to end index
+  print(myList[:])   # prints from beginning to end of list
+
+sliceFunc()
+
+Output:
+[1, 2, 3, 'Roxie']
+[3, 'Roxie', 'programming languages']
+[3, 'Roxie']
+[1, 2, 3, 'Roxie', 'programming languages']
+
+
+7. reverse()
+The reverse() operation is used to reverse the elements of the list. This method modifies the original list. To reverse a list without modifying the original one, we use the slice operation with negative indices. Specifying negative indices iterates the list from the rear end to the front end of the list.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def reverseFunc():
+  print(myList[::-1])  # does not modify the original list
+  myList.reverse()     # modifies the original list
+  print(myList)
+
+reverseFunc()
+
+Output:
+['programming languages', 'Roxie', 3, 2, 1]
+['programming languages', 'Roxie', 3, 2, 1]
+
+
+8. len()
+The len() method returns the length of the list, i.e. the number of elements in the list.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def lenFunc():
+  print(len(myList))
+
+lenFunc()
+
+Output:
+5
+
+
+9. min() & max()
+The min() method returns the minimum value in the list. The max() method returns the maximum value in the list. Both the methods accept only homogeneous lists, i.e. list having elements of similar type.
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def minmaxFunc():
+  print(min([1, 2, 3]))
+  print(max([1, 2, 3]))
+
+minmaxFunc()
+
+Output:
+1
+3
+
+
+10. count()
+The function count() returns the number of occurrences of a given element in the list.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def countFunc():
+  print(myList.count(3))
+
+countFunc()
+
+Output:
+1
+
+
+11. concatenate
+The concatenate operation is used to merge two lists and return a single list. The + sign is used to perform the concatenation. Note that the individual lists are not modified, and a new combined list is returned.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def concatFunc():
+  yourList = [4, 5, 'Python', 'is fun!'] 
+  print(myList + yourList)
+
+concatFunc()
+
+Output:
+[1, 2, 3, 'Roxie', 'programming languages', 4, 5, 'Python', 'is fun!']
+
+
+12. multiply
+Python also allows multiplying the list n times. The resultant list is the original list iterated n times.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def multiplyFunc():
+  print(myList*2)
+
+multiplyFunc()
+
+Output:
+[1, 2, 3, 'Roxie', 'programming languages', 1, 2, 3, 'Roxie', 'programming languages']
+
+
+13. index()
+The index() method returns the position of the first occurrence of the given element. It takes two optional parameters – the begin index and the end index. These parameters define the start and end position of the search area on the list. When supplied, the element is searched only in the sub-list bound by the begin and end indices. When not supplied, the element is searched in the whole list.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def indexFunc():
+  print(myList.index('Roxie'))            # searches in the whole list
+  print(myList.index('Roxie', 0, 5))     # searches from 0th to 2nd position
+
+indexFunc()
+
+Output:
+3
+3
+
+
+14. sort()
+The sort method sorts the list in ascending order. This operation can only be performed on homogeneous lists, i.e. lists having elements of similar type.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def sortFunc():
+  yourList = [4, 2, 6, 5, 0, 1] 
+  yourList.sort()
+  print(yourList)
+
+sortFunc()
+
+Output:
+[0, 1, 2, 4, 5, 6]
+
+
+15. clear()
+This function erases all the elements from the list and empties them.
+
+myList = [1, 2, 3, 'Roxie', 'programming languages']
+def clearFunc():
+  myList.clear()
+  print(myList)
+
+clearFunc()
+
+Output:
+[]
+
+
+
+Since we now know some of the functions we can use in list using python language, let us apply this by creating an inventory and try to use dome of its functions
+
+
+#the dictionary of the inventory
+items = {'Socks': [120, 300.00], 'Rubber Shoes': [50, 2500.00], 'Handkerchief': [200, 200.00], 'T-Shirt': [300, 500.00], 
+         'Phone Case': [100, 100.00], 'Perfume': [20, 5000.00], 'Lotion': [20, 1500.00], 'Coffee': [50, 600.00], 
+         'Coasters': [100, 150.00], 'Mugs': [80, 280.00]}
+items
+
+Output:
+{'Coasters': [100, 150.0],
+ 'Coffee': [50, 600.0],
+ 'Handkerchief': [200, 200.0],
+ 'Lotion': [20, 1500.0],
+ 'Mugs': [80, 280.0],
+ 'Perfume': [20, 5000.0],
+ 'Phone Case': [100, 100.0],
+ 'Rubber Shoes': [50, 2500.0],
+ 'Socks': [120, 300.0],
+ 'T-Shirt': [300, 500.0]}
+
+
+#add items to the dictionary/inventory by using the update function
+addItem = [('Shades', [50, 5000.00]), ('keychains', [500, 50.00])]
+
+for x in addItem:
+  items.update({x[0]:x[1]})
+
+items
+
+Output:
+{'Coasters': [100, 150.0],
+ 'Coffee': [50, 600.0],
+ 'Handkerchief': [200, 200.0],
+ 'Lotion': [20, 1500.0],
+ 'Mugs': [80, 280.0],
+ 'Perfume': [20, 5000.0],
+ 'Phone Case': [100, 100.0],
+ 'Rubber Shoes': [50, 2500.0],
+ 'Shades': [50, 5000.0],
+ 'Socks': [120, 300.0],
+ 'T-Shirt': [300, 500.0],
+ 'keychains': [500, 50.0]}
+
+
+#Update an item the dictionary/ inventory
+
+items['Phone Case'] = [50, 80.00]
+
+items
+
+Output:
+{'Coasters': [100, 150.0],
+ 'Coffee': [50, 600.0],
+ 'Handkerchief': [200, 200.0],
+ 'Lotion': [20, 1500.0],
+ 'Mugs': [80, 280.0],
+ 'Perfume': [20, 5000.0],
+ 'Phone Case': [50, 80.0],
+ 'Rubber Shoes': [50, 2500.0],
+ 'Shades': [50, 5000.0],
+ 'Socks': [120, 300.0],
+ 'T-Shirt': [300, 500.0],
+ 'keychains': [500, 50.0]}
+
+
+#remove an item in the dictionary/inventory by using pop()
+
+items.pop('Socks')
+items.popitem()
+items
+
+Output:
+{'Coasters': [100, 150.0],
+ 'Coffee': [50, 600.0],
+ 'Handkerchief': [200, 200.0],
+ 'Lotion': [20, 1500.0],
+ 'Mugs': [80, 280.0],
+ 'Perfume': [20, 5000.0],
+ 'Phone Case': [50, 80.0],
+ 'Rubber Shoes': [50, 2500.0],
+ 'Shades': [50, 5000.0],
+ 'T-Shirt': [300, 500.0]}
+
+
+#Show a specific item in the inventory
+
+print(items['Shades'])
+
+Output:
+[50, 5000.0]
+
+
+#Show all items in the dictionary
+
+print('Item Name     ','Qty  ', 'Price\n')
+for y in items:
+  print(y, '-', items[y])
+Item Name      Qty   Price
+
+
+Output:
+Rubber Shoes - [50, 2500.0]
+Handkerchief - [200, 200.0]
+T-Shirt - [300, 500.0]
+Phone Case - [50, 80.0]
+Perfume - [20, 5000.0]
+Lotion - [20, 1500.0]
+Coffee - [50, 600.0]
+Coasters - [100, 150.0]
+Mugs - [80, 280.0]
+Shades - [50, 5000.0]
